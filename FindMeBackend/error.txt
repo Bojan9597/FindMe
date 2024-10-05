@@ -1,0 +1,20 @@
+2024-10-05 12:20:29,036 INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-10-05 12:20:29,037 INFO:  * Restarting with stat
+2024-10-05 12:20:29,400 WARNING:  * Debugger is active!
+2024-10-05 12:20:29,505 INFO:  * Debugger PIN: 238-565-801
+2024-10-05 12:21:27,039 INFO:  * Detected change in '/home/bojan/Desktop/LocationSharing/testApp.py', reloading
+2024-10-05 12:21:27,234 INFO:  * Restarting with stat
+2024-10-05 12:21:27,658 WARNING:  * Debugger is active!
+2024-10-05 12:21:27,658 INFO:  * Debugger PIN: 238-565-801
+2024-10-05 12:21:30,344 INFO: 127.0.0.1 - - [05/Oct/2024 12:21:30] "[31m[1mPOST /user HTTP/1.1[0m" 400 -
+2024-10-05 12:21:30,404 INFO: 127.0.0.1 - - [05/Oct/2024 12:21:30] "[31m[1mPOST /user HTTP/1.1[0m" 400 -
+2024-10-05 12:21:52,242 INFO:  * Detected change in '/home/bojan/Desktop/LocationSharing/testApp.py', reloading
+2024-10-05 12:21:52,415 INFO:  * Restarting with stat
+2024-10-05 12:21:52,800 WARNING:  * Debugger is active!
+2024-10-05 12:21:52,801 INFO:  * Debugger PIN: 238-565-801
+2024-10-05 12:21:55,841 INFO:  * Detected change in '/home/bojan/Desktop/LocationSharing/testApp.py', reloading
+2024-10-05 12:21:56,052 INFO:  * Restarting with stat
+2024-10-05 12:21:56,456 WARNING:  * Debugger is active!
+2024-10-05 12:21:56,457 INFO:  * Debugger PIN: 238-565-801
+2024-10-05 12:21:58,277 INFO: 127.0.0.1 - - [05/Oct/2024 12:21:58] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2024-10-05 12:21:58,522 INFO: 127.0.0.1 - - [05/Oct/2024 12:21:58] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
