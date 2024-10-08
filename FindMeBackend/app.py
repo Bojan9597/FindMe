@@ -11,7 +11,8 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 # Configure logging to write errors to error.txt
-logging.basicConfig(filename='error.txt', level=logging.ERROR, format='%(asctime)s %(levelname)s: %(message)s')
+logging.basicConfig(filename='error.txt', level=logging.ERROR,
+                    format='%(asctime)s %(levelname)s: %(message)s')
 
 # User model
 class User(db.Model):
@@ -23,6 +24,9 @@ class User(db.Model):
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 # UserLocation model
 class UserLocation(db.Model):
@@ -73,6 +77,26 @@ def create_user():
     except Exception as e:
         db.session.rollback()
         logging.error(f'Exception in create_user: {str(e)}')
+        return jsonify({"error": str(e)}), 400
+
+# Route to login a user
+@app.route('/login', methods=['POST'])
+def login_user():
+    try:
+        data = request.get_json()
+        username = data.get('username')
+        password = data.get('password')
+
+        if not username or not password:
+            return jsonify({"error": "Missing required fields: username, password"}), 400
+
+        user = User.query.filter_by(username=username).first()
+        if user and user.check_password(password):
+            return jsonify({"message": "Login successful.", "user_id": user.id}), 200
+        else:
+            return jsonify({"error": "Invalid username or password."}), 401
+    except Exception as e:
+        logging.error(f'Exception in login_user: {str(e)}')
         return jsonify({"error": str(e)}), 400
 
 # Route to update an existing user
@@ -247,3 +271,4 @@ def get_location_shares():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
