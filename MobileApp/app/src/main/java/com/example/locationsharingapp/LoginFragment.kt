@@ -49,17 +49,20 @@ class LoginFragment : Fragment() {
             }
         }
 
+//        binding.buttonRegister.setOnClickListener {
+//            val username = binding.editTextUsername.text.toString().trim()
+//            val password = binding.editTextPassword.text.toString().trim()
+//            val email = "hi1@example.com" // Replace with actual email input from the user
+//
+//            if (username.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty()) {
+//                registerUser(username, email, password)
+//            } else {
+//                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//        }
         binding.buttonRegister.setOnClickListener {
-            val username = binding.editTextUsername.text.toString().trim()
-            val password = binding.editTextPassword.text.toString().trim()
-            val email = "hi1@example.com" // Replace with actual email input from the user
-
-            if (username.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty()) {
-                registerUser(username, email, password)
-            } else {
-                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT)
-                    .show()
-            }
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
